@@ -35,7 +35,7 @@
                 <span class="section-heading-upper">Something Else</span>
                 <span class="section-heading-lower">Something Goes Here</span>
               </h2>
-              <p class="mb-0">Place Holder Text</p>
+              <p class="mb-0">Place Holder Text Here</p>
             </div>
           </div>
         </div>
