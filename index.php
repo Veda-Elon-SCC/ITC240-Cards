@@ -32,7 +32,7 @@
           <div class="col-xl-9 mx-auto">
             <div class="cta-inner text-center rounded">
               <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Something</span>
+                <span class="section-heading-upper">Something Else</span>
                 <span class="section-heading-lower">Goes Here</span>
               </h2>
               <p class="mb-0">Place Holder Text</p>
