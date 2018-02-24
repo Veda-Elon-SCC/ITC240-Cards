@@ -14,7 +14,7 @@
           <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/intro.jpg" alt="">
           <div class="intro-text left-0 text-center bg-faded p-5 rounded">
             <h2 class="section-heading mb-4">
-              <span class="section-heading-upper">Something</span>
+              <span class="section-heading-upper">Something Goes Here</span>
               <span class="section-heading-lower">Goes Here</span>
             </h2>
             <p class="mb-3">Place Holder Text</p>
