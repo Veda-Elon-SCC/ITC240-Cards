@@ -6,13 +6,7 @@
 <html lang="en">
 <?php include 'includes/head.php';?>
 <body>
-<?php include 'includes/header.php';?>
-
-    <section class="page-section cta">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <div class="cta-inner text-center rounded">
+<?php get_header()?>
 
 <?php
 
@@ -45,7 +39,7 @@ if(mysqli_num_rows($result) > 0)
         $title = "Title Page for " . $State . " " . $Binary;
         $pageID = $State . " " . $Binary;
         $Feedback = '';//no feedback necessary
-    }    
+    }
 
 }else{//inform there are no records
     $Feedback = '<p>This customer does not exist</p>';
@@ -53,9 +47,9 @@ if(mysqli_num_rows($result) > 0)
 
 ?>
 <h1><?=$pageID?></h1>
-                
+
 <?php
-    
+
 if($Feedback == '')
 {//data exists, show it
     echo '<div class="form-group col-lg-12">';
@@ -64,16 +58,16 @@ if($Feedback == '')
     echo 'Binary: <b>' . $Binary . '</b> ' . '<br />';
     echo 'Logic: <b>' . $Logic . '</b> ' . '<br />';
     echo 'Description: <b>' . $Description . '</b>' . '<br />';
-    
+
     echo '<img src="cards/card-' . $id . '.png" />';
-    
+
     echo '</p>';
     echo '</div>';
 }else{//warn user no data
     echo $Feedback;
-}    
+}
 echo '<div class="form-group col-lg-12">';
-    
+
 echo '<p><a href="card_list.php">Back to List</a></p>';
 echo '</div>';
 //release web server resources
@@ -83,11 +77,7 @@ echo '</div>';
 @mysqli_close($iConn);
 
 ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-<?php include 'includes/footer.php';?>
+
+<?php get_footer()?>
 </body>
 </html>
