@@ -11,7 +11,7 @@ ob_start();
 
 define('SECURE',false); #force secure, https, for all site pages
 
-define('PREFIX', 'widgets_wn18_'); #Adds uniqueness to your DB table names.  Limits hackability, naming collisions
+define('PREFIX', 'cards_'); #Adds uniqueness to your DB table names.  Limits hackability, naming collisions
 
 header("Cache-Control: no-cache");header("Expires: -1");#Helps stop browser & proxy caching
 
