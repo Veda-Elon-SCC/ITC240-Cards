@@ -53,7 +53,7 @@ if($Feedback == '')
     echo 'Email: <b>' . $Email . '</b> ';
     
     //change here
-    echo '<img src="uploads/' . $id . '.jpg" />';
+    echo '<img src="uploads/customer' . $id . '.jpg" />';
 
     if(startSession() && isset($_SESSION["AdminID"]))
         {# only admins can see 'peek a boo' link:
@@ -74,7 +74,7 @@ if($Feedback == '')
 
         }
     //Fix this
-        if(isset($_GET['msg']))
+       /* if(isset($_GET['msg']))
         {# msg on querystring implies we're back from uploading new image
             $msgSeconds = (int)$_GET['msg'];
             $currSeconds = time();
@@ -84,7 +84,7 @@ if($Feedback == '')
                 echo 'document.write("<form><input type=button value=\'IMAGE UPLOADED! CLICK TO REFRESH PAGE!\' onClick=history.go()></form>")</scr';
                 echo 'ipt></p>';
             }
-        }
+        }*/
 
     echo '</p>'; 
 }else{//warn user no data
