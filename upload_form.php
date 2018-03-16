@@ -1,10 +1,10 @@
 <?php
 /**
- * upload_form.php takes id number from view page, and creates form for uploading a new image. 
- * 
- * This page requires a loaded querystring, with an id number of an item passed to it. Form  
+ * upload_form.php takes id number from view page, and creates form for uploading a new image.
+ *
+ * This page requires a loaded querystring, with an id number of an item passed to it. Form
  * will submit image to be uploaded, and ID to upload_image.php, which processes the upload.
- * 
+ *
  * @package nmUpload
  * @author Bill Newman <williamnewman@gmail.com>
  * @version 2.1 2015/12/07
@@ -13,7 +13,7 @@
  * @see upload_execute.php
  * @todo Identify the return page more specifically - don't rely on referer
  */
- 
+
 require 'includes/config.php';
 
 $title = "Image Upload";
@@ -26,10 +26,10 @@ $sizeBytes = 1000000; # bytes max file size
 
 /**
  * If true, will create thumbnail in same upload directory
- * 
- * Pass as a string, so can be placed in hidden form field 
+ *
+ * Pass as a string, so can be placed in hidden form field
  */
-$createThumb = "TRUE";  
+$createThumb = "TRUE";
 
 /**
  * Declared width of thumbnail
@@ -38,10 +38,10 @@ $createThumb = "TRUE";
 $thumbWidth = 50;
 
 /**
- * Declared suffix of thumbnail.  
+ * Declared suffix of thumbnail.
  * if use '_thumb', and image prefix is 'm', file name would be: m1_thumb.jpg
  */
-$thumbSuffix = "_thumb"; 
+$thumbSuffix = "_thumb";
 
 /**
  * Folder for upload.
@@ -58,17 +58,17 @@ $imagePrefix = "customer";
  */
 $extension = ".jpg";
 
-//END CONFIG AREA ---------------------------------------------------------- 
+//END CONFIG AREA ----------------------------------------------------------
 
 /**
  * Session protects including page
  * Only administrators are allowed to view this page
  * Level is defined in constant, ACCESS, above
- * @see admin_only_inc.php 
- */ 
+ * @see admin_only_inc.php
+ */
 require_once INCLUDE_PATH . 'admin_only_inc.php';
 #the loadHead variable allows us to add JS or CSS into the <head> tag inside header_inc.php
-$config->loadhead = 
+$config->loadhead =
 '
 <script language="JavaScript">
 function checkForm(thisForm)
@@ -77,14 +77,14 @@ function checkForm(thisForm)
 	{
 		alert("Please select a file to upload");
 		thisForm.FileToUpload.focus();
-		return false;	
+		return false;
 	}else{
 		document.getElementById("mySubmit").disabled=true;
 		document.getElementById("mySubmit").value="Uploading, please wait...";
-		return true;	
+		return true;
 	}
 }
-</script> 
+</script>
 ';
 
 get_header();
@@ -103,7 +103,7 @@ if(isset($_REQUEST['createThumb'])){$createThumb = $_REQUEST['createThumb'];}
 if(isset($_REQUEST['thumbWidth'])){$thumbWidth = $_REQUEST['thumbWidth'];}
 if(isset($_REQUEST['thumbSuffix'])){$thumbSuffix = $_REQUEST['thumbSuffix'];}
 if(isset($_REQUEST['sizeBytes'])){$sizeBytes = $_REQUEST['sizeBytes'];}
-$size = $sizeBytes/1000; # divide by 1000, use KB 
+$size = $sizeBytes/1000; # divide by 1000, use KB
 
 if($myID > 0)
 {//show table
@@ -139,7 +139,7 @@ if($myID > 0)
 <?php
 }else{
 	echo '<p align="center"><h4>No Such Image</h4></p>
-		<p align="center"><a href="javascript:history.go(-1)">EXIT</a></p>';	
+		<p align="center"><a href="javascript:history.go(-1)">EXIT</a></p>';
 }
 
 get_footer();

@@ -4,6 +4,9 @@
 <?php include 'includes/config.php';?>
 <?php get_header();?>
 <h1>Customer List</h1>
+<p>My card list images are all png, so it was problematic for image upload.</p>
+<p>I have included the original customer list to show functionality.</p>
+
 <?php
 $sql = "select * from test_Customers";
 //we connect to the db here
@@ -21,13 +24,13 @@ if(mysqli_num_rows($result) > 0)
         echo 'FirstName: <b>' . $row['FirstName'] . '</b> ';
         echo 'LastName: <b>' . $row['LastName'] . '</b> ';
         echo 'Email: <b>' . $row['Email'] . '</b> ';
-        
+
         echo '<a href="customer_view.php?id=' . $row['CustomerID'] . '">' . $row['FirstName'] . '</a>';
-        
+
         echo '<img src="' . $config->virtual_path . '/uploads/customer' . dbOut($row['CustomerID']) . '_thumb.jpg" />';
-        
+
         echo '</p>';
-    }    
+    }
 
 }else{//inform there are no records
     echo '<p>There are currently no customers</p>';

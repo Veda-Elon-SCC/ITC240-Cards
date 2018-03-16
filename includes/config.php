@@ -29,6 +29,7 @@ $config = new stdClass;
 //these are the navigation links
 $config->nav1['index.php'] = "HOME";
 $config->nav1['card_list.php'] = "CARDS";
+$config->nav1['customer_list.php'] = "CUSTOMERS";
 $config->nav1['daily.php'] = "DAILY";
 $config->nav1['contact.php'] = "CONTACT";
 
@@ -87,6 +88,16 @@ switch(THIS_PAGE){
         $config->title = 'Card';
         $config->banner = 'Card';
         $config->slogan = 'This is One Card';
+    break;
+		case 'customer_list.php':
+        $config->title = 'Customers';
+        $config->banner = 'Customers';
+        $config->slogan = 'List of Customers';
+    break;
+    case 'customer_view.php':
+        $config->title = 'Customer';
+        $config->banner = 'Customer';
+        $config->slogan = 'This is A Customer';
     break;
     default:
         $config->title = THIS_PAGE;

@@ -58,11 +58,18 @@ if($Feedback == '')
     echo 'Binary: <b>' . $Binary . '</b> ' . '<br />';
     echo 'Logic: <b>' . $Logic . '</b> ' . '<br />';
     echo 'Description: <b>' . $Description . '</b>' . '<br />';
-
     echo '<img src="cards/card-' . $id . '.png" />';
+
+//This is the upload section
+if(startSession() && isset($_SESSION["AdminID"]))
+    {# only admins can see 'peek a boo' link:
+        echo '<p align="center"><a href="' . $config->virtual_path . '/upload_form.php?' . $_SERVER['QUERY_STRING'] . '">UPLOAD IMAGE</a></p>';
+    }
+//End of upload section
 
     echo '</p>';
     echo '</div>';
+
 }else{//warn user no data
     echo $Feedback;
 }
